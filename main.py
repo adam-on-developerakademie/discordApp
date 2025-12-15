@@ -25,14 +25,12 @@ async def on_ready():
     
 @bot.command() 
 async def hallo(ctx):
-    await ctx.send(f'Hallo {ctx.author} wie kann ich dir helfen?')   # Einfache Begrüßung wenn der Befehl !hallo eingegeben wird
+    await ctx.send(f'Hallo {ctx.author.mention} wie kann ich dir helfen?')   # Einfache Begrüßung wenn der Befehl !hallo eingegeben wird  # mention ist um den UserName zu vewenden
     
     
 @bot.command()
 async def msg(ctx, arg ):
-    await ctx.send(f'OK {ctx.author} du hast mir gesagt: {arg}')   # Bot wiederholt die Nachricht die nach !msg eingegeben wird
-
-
+    await ctx.send(f'OK {ctx.author.mention} du hast mir gesagt: {arg}')   # Bot wiederholt die Nachricht die nach !msg eingegeben wird
 
 @bot.command()      # Befehl zum Hinzufügen einer Rolle
 async def addRole(ctx, new_role = "Neue-Rolle"):
